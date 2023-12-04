@@ -47,11 +47,6 @@ public class UsrMemberController {
 	@RequestMapping("/usr/member/doJoin")
 	@ResponseBody
 	public String doJoin(String loginId, String loginPw, String name, String nickname, String cellphoneNum, String email) {
-		
-		if (rq.getLoginedMemberId() != 0) {
-			return Util.jsHistoryBack("로그아웃 후 이용해주세요");
-		}
-		
 		if (Util.empty(loginId)) {
 			return Util.jsHistoryBack("아이디를 입력해주세요");
 		}
@@ -77,7 +72,7 @@ public class UsrMemberController {
 			return Util.jsHistoryBack(Util.f("이미 사용중인 아이디(%s) 입니다", loginId));
 		}
 		
-		memberService.joinMember(loginId, loginPw, name, nickname, cellphoneNum, email);
+		memberService.joinMember(loginId, Util.sha256(loginPw), name, nickname, cellphoneNum, email);
 		
 		return Util.jsReplace(Util.f("%s님의 가입이 완료되었습니다", name), "login");
 	}
@@ -90,11 +85,6 @@ public class UsrMemberController {
 	@RequestMapping("/usr/member/doLogin")
 	@ResponseBody
 	public String doLogin(String loginId, String loginPw) {
-		
-		if (rq.getLoginedMemberId() != 0) {
-			return Util.jsHistoryBack("로그아웃 후 이용해주세요");
-		}
-		
 		if (Util.empty(loginId)) {
 			return Util.jsHistoryBack("아이디를 입력해주세요");
 		}
@@ -108,7 +98,7 @@ public class UsrMemberController {
 			return Util.jsHistoryBack(Util.f("%s은(는) 존재하지 않는 아이디입니다", loginId));
 		}
 		
-		if (member.getLoginPw().equals(loginPw) == false) {
+		if (member.getLoginPw().equals(Util.sha256(loginPw)) == false) {
 			return Util.jsHistoryBack("비밀번호를 확인해주세요");
 		}
 		
@@ -152,7 +142,7 @@ public class UsrMemberController {
 		
 		Member member = memberService.getMemberById(rq.getLoginedMemberId());
 		
-		if (member.getLoginPw().equals(loginPw) == false) {
+		if (member.getLoginPw().equals(Util.sha256(loginPw)) == false) {
 			return rq.jsReturnOnView("비밀번호가 일치하지 않습니다");
 		}
 		
@@ -207,7 +197,7 @@ public class UsrMemberController {
 			return Util.jsHistoryBack("비밀번호가 일치하지 않습니다"); 
 		}
 		
-		memberService.doPasswordModify(rq.getLoginedMemberId(), loginPw);
+		memberService.doPasswordModify(rq.getLoginedMemberId(), Util.sha256(loginPw));
 		
 		return Util.jsReplace("비밀번호가 변경되었습니다", "myPage");
 	}
