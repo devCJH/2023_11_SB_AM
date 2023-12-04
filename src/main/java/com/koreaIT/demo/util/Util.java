@@ -1,6 +1,7 @@
 package com.koreaIT.demo.util;
 
 import java.security.MessageDigest;
+import java.util.UUID;
 
 public class Util {
 	public static boolean empty(String str) {
@@ -76,5 +77,9 @@ public class Util {
 		} catch (Exception ex) {
 			return "";
 		}
+	}
+	
+	public static String createTempPassword() {
+	    return UUID.randomUUID().toString().replaceAll("-", "").substring(0, 10);
 	}
 }

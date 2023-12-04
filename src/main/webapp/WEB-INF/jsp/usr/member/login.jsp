@@ -47,8 +47,12 @@
 				</div>
 			</form>
 			
-			<div class="btns mt-2">
+			<div class="btns mt-2 flex justify-between">
 				<button class="btn-text-color btn btn-outline btn-sm" onclick="history.back();">뒤로가기</button>
+				<div>
+					<a class="btn-text-color btn btn-outline btn-sm" href="findLoginId">아이디 찾기</a>
+					<a class="btn-text-color btn btn-outline btn-sm" href="findLoginPw">비밀번호 찾기</a>
+				</div>
 			</div>
 		</div>
 	</section>
