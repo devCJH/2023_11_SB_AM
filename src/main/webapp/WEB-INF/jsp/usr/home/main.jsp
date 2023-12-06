@@ -28,6 +28,17 @@
 				<div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima dolorum itaque cumque ipsa dicta libero dolores natus voluptatibus omnis quo reprehenderit adipisci rem ipsum officia aliquam consequatur neque! Dolor maxime.</div>
 				<button class="close-btn btn-text-color btn btn-wide btn-outline">CLOSE</button>
 			</div>
+			
+			<div class="mt-8">
+				<form action="upload" method="POST" enctype="multipart/form-data">
+					<input type="file" name="file" />
+					<button class="btn-text-color btn btn-outline btn-sm">업로드</button>
+				</form>
+			</div>
+
+			<div class="mt-8">
+				<a class="btn-text-color btn btn-outline btn-sm" href="/usr/home/view">파일보러가기</a>
+			</div>
 		</div>
 	</section>
 	
