@@ -16,20 +16,24 @@ html > body .ProseMirror, html > body .toastui-editor-contents {
 	font-size: 1.25rem;
 }
 
+.theme-toggle .fa-solid {
+	display: none;
+}
+
+html[data-theme="dark"] .theme-toggle .fa-solid {
+	display: inline;
+}
+
+html[data-theme="dark"] .theme-toggle .fa-regular {
+	display: none;
+}
+
 .table-box-type > table {
 	width: 100%;
 }
 
 .border-bottom-line {
 	border-bottom: 1px solid #96948d;
-}
-
-.btns > .btn-text-color {
-	color:black;
-}
-
-.btns > .btn-text-color:hover {
-	color:white;
 }
 
 .modal-exam, .popUp-exam {

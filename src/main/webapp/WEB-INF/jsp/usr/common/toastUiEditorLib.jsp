@@ -216,11 +216,14 @@
 	    const $initialValueEl = $node.find(' > script');
 	    const initialValue = $initialValueEl.length == 0 ? '' : $initialValueEl.html().trim();
 
+	    const theme = localStorage.getItem('theme') ?? "light";
+	    
 	    const editor = new toastui.Editor({
 	      el: node,
 	      previewStyle: 'tab',
 	      initialValue: initialValue,
 	      height:'600px',
+	      theme: theme,
 	      plugins: [
 	        [toastui.Editor.plugin.chart, ToastEditor__chartOptions],
 	        [toastui.Editor.plugin.codeSyntaxHighlight, {highlighter:Prism}],
@@ -248,10 +251,13 @@
 	    const initialValue = $initialValueEl.length == 0 ? '' : $initialValueEl.html().trim();
 	    $node.empty();
 
+	    const theme = localStorage.getItem('theme') ?? "light";
+	    
 	    let viewer = new toastui.Editor.factory({
 	      el: node,
 	      initialValue: initialValue,
 	      viewer:true,
+	      theme: theme,
 	      plugins: [
 	        [toastui.Editor.plugin.chart, ToastEditor__chartOptions],
 	        [toastui.Editor.plugin.codeSyntaxHighlight, {highlighter:Prism}],
