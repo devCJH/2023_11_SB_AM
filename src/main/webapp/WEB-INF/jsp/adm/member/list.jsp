@@ -98,29 +98,6 @@
 				})
 			</script>
 			
-<!-- 			<div class="mt-2 flex justify-end"> -->
-<!-- 				<button class="btn btn-outline btn-sm btn-delete-selected-members">회원 삭제</button> -->
-<!-- 			</div> -->
-			
-<!-- 			<form action="doDeleteMembers" method="POST" name="do-delete-members-form"> -->
-<!-- 				<input type="hidden" name="ids" value="" /> -->
-<!-- 			</form> -->
-			
-			<!-- <script>
-				$('.btn-delete-selected-members').click(function() {
-					const values = $('.checkbox-member-id:checked').map((index, el) => el.value).toArray();
-					if (values.length == 0) {
-						alert('선택한 회원이 없습니다');
-						return;
-					}
-					if (confirm('선택한 회원을 삭제하시겠습니까?') == false) {						
-						return;
-					}
-					$('input[name=ids]').val(values.join(','));
-					$('form[name=do-delete-members-form]').submit();
-				})
-			</script> -->
-			
 			<div class="mt-2 flex justify-center">
 				<div class="join">
 					<c:set var="pageMenuLen" value="5" />

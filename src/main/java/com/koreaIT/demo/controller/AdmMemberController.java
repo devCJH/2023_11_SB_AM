@@ -45,8 +45,11 @@ public class AdmMemberController {
 		List<Member> members = memberService.getMembers(authLevel, searchKeywordType, searchKeyword, limitStart,
 				itemsInAPage);
 
+		Member member = memberService.getMemberById(rq.getLoginedMemberId());
+		
 		model.addAttribute("searchKeywordType", searchKeywordType);
 		model.addAttribute("searchKeyword", searchKeyword);
+		model.addAttribute("member", member);
 		model.addAttribute("members", members);
 		model.addAttribute("membersCnt", membersCnt);
 		model.addAttribute("authLevel", authLevel);
