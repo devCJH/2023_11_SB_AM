@@ -102,6 +102,10 @@ public class UsrMemberController {
 			return Util.jsHistoryBack("비밀번호를 확인해주세요");
 		}
 		
+		if (member.getDelStatus() == 1) {
+			return Util.jsHistoryBack("사용할 수 없는 계정입니다");
+		}
+		
 		rq.login(member);
 		
 		return Util.jsReplace(Util.f("%s 회원님 환영합니다~", member.getNickname()), "/");

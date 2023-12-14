@@ -13,20 +13,27 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.koreaIT.demo.service.FileService;
+import com.koreaIT.demo.service.MemberService;
 import com.koreaIT.demo.util.Util;
 import com.koreaIT.demo.vo.FileVO;
+import com.koreaIT.demo.vo.Rq;
 
 @Controller
 public class UsrHomeController {
 
 	private FileService fileService;
+	private MemberService memberService;
+	private Rq rq;
 	
-	public UsrHomeController(FileService fileService) {
+	public UsrHomeController(FileService fileService, MemberService memberService, Rq rq) {
 		this.fileService = fileService;
+		this.memberService = memberService;
+		this.rq = rq;
 	}
 	
 	@RequestMapping("/usr/home/main")
-	public String showMain() {
+	public String showMain(Model model) {
+		model.addAttribute("member", memberService.getMemberById(rq.getLoginedMemberId()));
 		return "usr/home/main";
 	}
 	

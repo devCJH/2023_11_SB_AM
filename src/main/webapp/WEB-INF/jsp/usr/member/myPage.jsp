@@ -47,8 +47,8 @@
 			
 			<div class="btns mt-2">
 				<div class="flex justify-between">
-					<button class="btn-text-color btn btn-outline btn-sm" onclick="history.back();">뒤로가기</button>
-					<a class="btn-text-color btn btn-outline btn-sm" href="checkPassword?loginId=${member.loginId }">회원정보수정</a>
+					<button class="btn btn-outline btn-sm" onclick="history.back();">뒤로가기</button>
+					<a class="btn btn-outline btn-sm" href="checkPassword?loginId=${member.loginId }">회원정보수정</a>
 				</div>
 			</div>
 		</div>

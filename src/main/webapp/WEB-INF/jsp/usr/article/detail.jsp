@@ -88,7 +88,7 @@
 								<span>${article.point }</span>
 							</c:if>
 							<c:if test="${rq.getLoginedMemberId() != 0 }">
-								<button id="recommendBtn" class="mr-8 btn-text-color btn btn-outline btn-xs">좋아요👍</button>
+								<button id="recommendBtn" class="mr-8 btn btn-outline btn-xs">좋아요👍</button>
 								<span>좋아요 : ${article.point }개</span>
 							</c:if>
 						</td>
@@ -109,11 +109,11 @@
 			</div>
 			
 			<div class="btns mt-2">
-				<button class="btn-text-color btn btn-outline btn-sm" onclick="history.back();">뒤로가기</button>
+				<button class="btn btn-outline btn-sm" onclick="history.back();">뒤로가기</button>
 				
 				<c:if test="${rq.getLoginedMemberId() != null && rq.getLoginedMemberId() == article.memberId }">
-					<a class="btn-text-color btn btn-outline btn-sm" href="modify?id=${article.id }">수정</a>
-					<a class="btn-text-color btn btn-outline btn-sm" href="doDelete?id=${article.id }" onclick="if(confirm('정말 삭제하시겠습니까?') == false) return false;">삭제</a>
+					<a class="btn btn-outline btn-sm" href="modify?id=${article.id }">수정</a>
+					<a class="btn btn-outline btn-sm" href="doDelete?id=${article.id }" onclick="if(confirm('정말 삭제하시겠습니까?') == false) return false;">삭제</a>
 				</c:if>
 			</div>
 		</div>
@@ -162,8 +162,8 @@
 								<div class="mb-2"><span class="font-semibold">\${data.data.writerName}</span></div>
 								<textarea class="textarea textarea-bordered w-full" name="body" placeholder="댓글을 입력해보세요">\${data.data.body}</textarea>
 								<div class="flex justify-end mt-1">
-									<button onclick="replyModify_cancle(\${i});" class="btn-text-color btn btn-outline btn-xs mr-2">취소</button>
-									<button class="btn-text-color btn btn-outline btn-xs">작성</button>
+									<button onclick="replyModify_cancle(\${i});" class="btn btn-outline btn-xs mr-2">취소</button>
+									<button class="btn btn-outline btn-xs">작성</button>
 								</div>
 							</div>
 						</form>
@@ -219,7 +219,7 @@
 					<div class="mt-6 border border-gray-400 rounded-lg p-4">
 						<div class="mb-2"><span class="font-semibold">${member.getNickname() }</span></div>
 						<textarea class="textarea textarea-bordered w-full" name="body" placeholder="댓글을 입력해보세요"></textarea>
-						<div class="flex justify-end mt-1"><button class="btn-text-color btn btn-outline btn-sm">작성</button></div>
+						<div class="flex justify-end mt-1"><button class="btn btn-outline btn-sm">작성</button></div>
 					</div>
 				</form>
 			</c:if>

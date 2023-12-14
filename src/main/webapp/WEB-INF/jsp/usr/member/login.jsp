@@ -41,17 +41,17 @@
 							<td><input class="input input-bordered input-primary w-9/12" name="loginPw" type="text" placeholder="비밀번호를 입력해주세요" /></td>
 						</tr>
 						<tr>
-							<td class="text-center" colspan="2"><button class="btn-text-color btn btn-wide btn-outline">로그인</button></td>
+							<td class="text-center" colspan="2"><button class="btn btn-wide btn-outline">로그인</button></td>
 						</tr>
 					</table>
 				</div>
 			</form>
 			
 			<div class="btns mt-2 flex justify-between">
-				<button class="btn-text-color btn btn-outline btn-sm" onclick="history.back();">뒤로가기</button>
+				<button class="btn btn-outline btn-sm" onclick="history.back();">뒤로가기</button>
 				<div>
-					<a class="btn-text-color btn btn-outline btn-sm" href="findLoginId">아이디 찾기</a>
-					<a class="btn-text-color btn btn-outline btn-sm" href="findLoginPw">비밀번호 찾기</a>
+					<a class="btn btn-outline btn-sm" href="findLoginId">아이디 찾기</a>
+					<a class="btn btn-outline btn-sm" href="findLoginPw">비밀번호 찾기</a>
 				</div>
 			</div>
 		</div>

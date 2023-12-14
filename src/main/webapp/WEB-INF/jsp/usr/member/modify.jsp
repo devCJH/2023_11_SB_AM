@@ -79,15 +79,15 @@
 							<td><input class="input input-bordered input-primary w-9/12" name="email" type="text" value="${member.email }" placeholder="이메일을 입력해주세요" /></td>
 						</tr>
 						<tr>
-							<td class="text-center" colspan="2"><button class="btn-text-color btn btn-wide btn-outline">수정</button></td>
+							<td class="text-center" colspan="2"><button class="btn btn-wide btn-outline">수정</button></td>
 						</tr>
 					</table>
 				</div>
 			</form>
 			<div class="btns mt-2">
 				<div class="flex justify-between">
-					<button class="btn-text-color btn btn-outline btn-sm" onclick="history.back();">뒤로가기</button>
-					<a class="btn-text-color btn btn-outline btn-sm" href="passwordModify">비밀번호변경</a>
+					<button class="btn btn-outline btn-sm" onclick="history.back();">뒤로가기</button>
+					<a class="btn btn-outline btn-sm" href="passwordModify">비밀번호변경</a>
 				</div>
 			</div>
 		</div>

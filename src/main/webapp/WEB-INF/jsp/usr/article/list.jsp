@@ -21,7 +21,7 @@
 						</select>
 						
 						<input name="searchKeyword" value="${searchKeyword }" class="ml-2 input input-sm input-bordered input-primary w-60" type="text" placeholder="검색어를 입력해주세요" />
-						<button class="ml-2 btn-text-color btn btn-outline btn-sm">검색</button>
+						<button class="ml-2 btn btn-outline btn-sm">검색</button>
 					</form>
 				</div>
 			</div>
@@ -65,7 +65,7 @@
 			
 			<c:if test="${rq.getLoginedMemberId() != 0 }">
 				<div class="mt-2 flex justify-end">
-					<a class="btn-text-color btn btn-outline btn-sm" href="write">글쓰기</a>
+					<a class="btn btn-outline btn-sm" href="write">글쓰기</a>
 				</div>
 			</c:if>
 			
